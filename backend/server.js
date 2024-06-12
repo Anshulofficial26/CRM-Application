@@ -6,10 +6,13 @@ dotenv.config();
 
 const cors = require("cors");
 app.use(cors(
-    {
-        origin: ["h"]
-  ));
+  {
+    origin: ["https://CRM-Application-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
 
+));
 
 const userRouter =require("./router/userRoute");
 
