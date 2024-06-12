@@ -5,12 +5,17 @@ const dotenv= require("dotenv");
 dotenv.config();
 
 const cors = require("cors");
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["h"]
+  ));
+
 
 const userRouter =require("./router/userRoute");
 
 app.use(express.json());
 
+mongoose.connect(mongodb+srv://anshul:test123@cluster0.5hffpzq.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0)
 
 mongoose
   .connect(process.env.URI)
